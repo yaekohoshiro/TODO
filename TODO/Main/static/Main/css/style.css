@@ -1,0 +1,87 @@
+.main-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ===== СТАТИСТИКА ===== */
+.stats-card {
+    margin-bottom: 30px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.stat-item {
+    padding: 15px;
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.05);
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.stat-item span {
+    display: block;
+    margin-top: 5px;
+    font-size: 20px;
+    color: #00c6ff;
+}
+
+.stat-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0,150,255,0.3);
+}
+
+/* ===== ЗАДАЧИ ===== */
+.tasks-container {
+    margin-top: 20px;
+}
+
+.task-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* ===== EMPTY ===== */
+.empty {
+    text-align: center;
+    opacity: 0.6;
+}
+
+/* ===== LOGOUT ===== */
+.logout-block {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.logout-btn {
+    background: linear-gradient(90deg, #ff4d4d, #ff0000);
+}
+
+.logout-btn:hover {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+}
+.create-block {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.create-btn {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.create-btn:hover {
+    box-shadow: 0 0 20px rgba(0, 198, 255, 0.7);
+}

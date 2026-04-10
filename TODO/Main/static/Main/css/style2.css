@@ -1,0 +1,69 @@
+.create-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.create-card {
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+}
+
+/* Django генерирует <p> */
+.create-form p {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+/* LABEL */
+.create-form label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* INPUTS */
+.create-form input,
+.create-form textarea,
+.create-form select {
+    padding: 10px;
+    border-radius: 8px;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,150,255,0.2);
+    color: white;
+
+    transition: 0.2s;
+}
+
+/* FOCUS */
+.create-form input:focus,
+.create-form textarea:focus,
+.create-form select:focus {
+    border-color: #00c6ff;
+    box-shadow: 0 0 10px rgba(0,150,255,0.6);
+    outline: none;
+}
+
+/* HELP TEXT */
+.helptext {
+    font-size: 12px;
+    opacity: 0.6;
+    margin-top: 3px;
+}
+
+/* ERRORS */
+.errorlist {
+    color: #ff4d4d;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* BUTTON */
+.btn {
+    width: 100%;
+    margin-top: 10px;
+}

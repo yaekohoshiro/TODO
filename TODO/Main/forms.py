@@ -4,9 +4,9 @@ from . import models
 class Task_form(forms.ModelForm):
     class Meta:
         model = models.Task
-        fields = ["name", "discription", "tags"]
+        fields = ["name", "description", "tags"]
 
         help_texts = {
             "name": "Введите своё имя", 
-            "discription": "Введите описание",
+            "description": "Введите описание",
         }
