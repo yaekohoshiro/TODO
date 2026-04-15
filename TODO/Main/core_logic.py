@@ -1,9 +1,12 @@
 from . import models, forms
 from django.db.models import Q, Count, QuerySet
 
-def get_filter_task(user: models.User, progress = 0, tag = "my_tasks"):
+def get_filter_task(user: models.User, progress = -1, tag = "_"):
     tasks = user.task
-    list_task = tasks.filter(Q(progress = progress) & Q(tags = tag))
+    if tag == "_" and progress == -1:
+        list_task = tasks.all()
+    else:
+        list_task = tasks.filter(Q(progress = progress) & Q(tags = tag))
     return list_task
 
 def get_statistical(user):
@@ -24,7 +27,9 @@ def updateTask(request):
         form = forms.Task_form(instance=task)
         return form
     elif request.method == "POST":
-        form = forms.Task_form(data=request.POST)
+        id = request.GET.get("id")
+        task = models.Task.objects.get(id = id)
+        form = forms.Task_form(data=request.POST, instance=task)
         if form.is_valid():
             form.save()
             return True
@@ -45,9 +50,15 @@ def createTask(request):
         return False
     return None
 
+def changeState(request):
+    id = request.POST.get("id")
+    state = request.POST.get("state")
+    task = models.Task.objects.get(id=id)
+    task.progress = state
+    task.save()
 
-    '''
-    list_task = models.Task.objects.filter(progress = progress)
-    list_task = list_task.filter(tag = tag)
-    return list_task
-    '''
+def deleteTask(request):
+    id = request.POST.get("id")
+    task = models.Task.objects.get(id=id)
+    task.delete()
+    
